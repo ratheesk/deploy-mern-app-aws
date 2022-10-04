@@ -81,6 +81,7 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 1. Run system update
 
    ```sudo apt-get update```
+
 2. Install the editor
 
    ```sudo apt-get install nano```
@@ -98,3 +99,17 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 3. Configure PM2 to start Express application at startup.
 
    ```sudo env PATH=$PATH:/usr/local/bin pm2 startup -u ubuntu```
+
+## Clone MERN app
+
+1. Run system update
+
+   ```sudo apt-get update```
+
+2. Clone from git hub
+
+   ```git clone <url>```
+
+3. Input your github account name
+
+4. Input your password
