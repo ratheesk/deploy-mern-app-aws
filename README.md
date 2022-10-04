@@ -20,3 +20,10 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 
 8. Create new keypair with .pem and save it on your computer
 9. **Launch** your instance
+
+## Log in to your server
+
+1. Go to the .pem file location and open terminal
+2. Replace your Public IPv4 DNS
+
+    ``` ssh -i visAct.pem ubuntu@Public_IPv4_DNS ```
