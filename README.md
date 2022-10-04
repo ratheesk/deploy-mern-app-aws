@@ -84,3 +84,17 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 2. Install the editor
 
    ```sudo apt-get install nano```
+
+## Install pm2
+
+1. Run system update
+
+   ```sudo apt-get update```
+
+2. install pm2
+
+   ```sudo npm install pm2 -g```
+
+3. Configure PM2 to start Express application at startup.
+
+   ```sudo env PATH=$PATH:/usr/local/bin pm2 startup -u ubuntu```
