@@ -131,19 +131,22 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 2. install pm2
 
    ```
-   sudo npm install pm2 -g```
+   sudo npm install pm2 -g
+   ```
 
 3. Configure PM2 to start Express application at startup.
 
    ```
-   sudo env PATH=$PATH:/usr/local/bin pm2 startup -u ubuntu```
+   sudo env PATH=$PATH:/usr/local/bin pm2 startup -u ubuntu
+   ```
 
 ## Clone MERN app
 
 1. Run system update
 
    ```
-   sudo apt-get update```
+   sudo apt-get update
+   ```
 
 2. Clone from git hub
 
