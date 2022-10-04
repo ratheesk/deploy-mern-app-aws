@@ -26,93 +26,130 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 1. Go to the .pem file location and open terminal
 2. Replace your Public IPv4 DNS
 
-    ``` ssh -i visAct.pem ubuntu@Public_IPv4_DNS ```
+    ```
+    ssh -i visAct.pem ubuntu@Public_IPv4_DNS
+    ```
 
 ## Install Nodejs
 
 1. Run system update
 
-   ```sudo apt-get update```
+   ```
+   sudo apt-get update
+   ```
 
 2. install curl
 
-   ```sudo apt install curl -y```
+   ```
+   sudo apt install curl -y
+   ```
 
 3. Check available Node.js Version
 
-   ```sudo apt policy nodejs```
+   ```
+   sudo apt policy nodejs
+   ```
 
 4. Add Nodejs latest repo on Ec2 Ubuntu
 
-   ```curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - ```
+   ```
+   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+   ```
 
 5. Install Nodejs & NPM
 
-   ```sudo apt-get install nodejs```
+   ```
+   sudo apt-get install nodejs
+   ```
 
 6. Check the installed version of node
 
-   ```node -v```
+   ```
+   node -v
+   ```
 
 7. Check the installed version of npm
 
-   ```npm -v```
+   ```
+   npm -v
+   ```
 
 ## Install Nginx
 
 1. Install nginx
 
-   ```sudo apt-get install nginx```
+   ```
+   sudo apt-get install nginx
+   ```
 
 2. Start nginx
 
-   ```sudo service nginx start```
+   ```
+   sudo service nginx start
+   ```
 
 3. Check nginx status
 
-   ```sudo service nginx status```
+   ```
+   sudo service nginx status
+   ```
 
 4. Exit nginx status
 
-   ```q```
+   ```
+   q
+   ```
 
 5. Ensure every time you restart your system Nginx starts up automatically.
 
-   ```sudo systemctl enable nginx```
+   ```
+   sudo systemctl enable nginx
+   ```
 
 ## Install nano text editor
 
 1. Run system update
 
-   ```sudo apt-get update```
+   ```
+   sudo apt-get update
+   ```
 
 2. Install the editor
 
-   ```sudo apt-get install nano```
+   ```
+   sudo apt-get install nano
+   ```
 
 ## Install pm2
 
 1. Run system update
 
-   ```sudo apt-get update```
+   ```
+   sudo apt-get update
+   ```
 
 2. install pm2
 
-   ```sudo npm install pm2 -g```
+   ```
+   sudo npm install pm2 -g```
 
 3. Configure PM2 to start Express application at startup.
 
-   ```sudo env PATH=$PATH:/usr/local/bin pm2 startup -u ubuntu```
+   ```
+   sudo env PATH=$PATH:/usr/local/bin pm2 startup -u ubuntu```
 
 ## Clone MERN app
 
 1. Run system update
 
-   ```sudo apt-get update```
+   ```
+   sudo apt-get update```
 
 2. Clone from git hub
 
-   ```git clone <url>```
+   ```
+   git clone <url>
+   ```
 
 3. Input your github account name
 
@@ -122,39 +159,57 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 
 1. Navigate to client folder
 
-   ```cd client_folder_path```
+   ```
+   cd client_folder_path
+   ```
 2. Install depencies
 
-   ```sudo npm install```
+   ```
+   sudo npm install
+   ```
 
 3. Build the app
 
-   ```sudo npm run build```
+   ```
+   sudo npm run build
+   ```
 
 ## Run the node server
 
 1. Navigate to server folder
 
-   ```cd server_folder_path```
+   ```
+   cd server_folder_path
+   ```
 
 2. Install depencies
 
-   ```sudo npm install```
+   ```
+   sudo npm install
+   ```
 3. Create .env file ,add credentials and save it
 
-   ```sudo nano .env```
+   ```
+   sudo nano .env
+   ```
 
 4. Run the app with pm2
 
-   ```pm2 start app.js```
+   ```
+   pm2 start app.js
+   ```
 
 5. Freeze a process list on reboot
 
-   ```pm2 save```
+   ```
+   pm2 save
+   ```
 
 6. Display all processes logs in streaming
 
-   ```pm2 logs```
+   ```
+   pm2 logs
+   ```
 
 
 ## Setting up Nginx as a reverse proxy for Nodejs application
@@ -176,13 +231,14 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
    ``` server {
    listen 80 default_server;
    server_name yourdomain.com www.yourdomain.com;
+
    location / {
-   proxy_pass http://private_ip_of_server:5000;
-   proxy_http_version 1.1;
-   proxy_set_header Upgrade $http_upgrade;
-   proxy_set_header Connection 'upgrade';
-   proxy_set_header Host $host;
-   proxy_cache_bypass $http_upgrade;
+        proxy_pass http://private_ip_of_server:5000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
    } 
    
    ```
