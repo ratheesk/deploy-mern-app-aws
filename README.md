@@ -57,3 +57,23 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 7. Check the installed version of npm
 
    ```npm -v```
+
+## Install Nginx
+
+1. Install nginx
+
+   ```sudo apt-get install nginx```
+
+2. Start nginx
+
+   ```sudo service nginx start```
+
+3. Check nginx status
+
+   ```sudo service nginx status```
+
+4. Exit nginx status
+
+   ```q```
+
+
