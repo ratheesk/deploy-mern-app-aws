@@ -113,3 +113,13 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 3. Input your github account name
 
 4. Input your password
+
+## Build the react app
+
+1. Install depencies
+
+   ```sudo npm install```
+
+2. Build the app
+
+   ```sudo npm run build```
