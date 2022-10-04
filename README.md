@@ -136,15 +136,18 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 2. Install depencies
 
    ```sudo npm install```
+3. Create .env file ,add credentials and save it
 
-3. Run the app with pm2
+   ```sudo nano .env```
+
+4. Run the app with pm2
 
    ```pm2 start app.js```
 
-4. Freeze a process list on reboot
+5. Freeze a process list on reboot
 
    ```pm2 save```
 
-5. Display all processes logs in streaming
+6. Display all processes logs in streaming
 
    ```pm2 logs```
