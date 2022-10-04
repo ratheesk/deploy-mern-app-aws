@@ -116,10 +116,35 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 
 ## Build the react app
 
-1. Install depencies
+1. Navigate to client folder
+
+   ```cd client_folder_path```
+2. Install depencies
 
    ```sudo npm install```
 
-2. Build the app
+3. Build the app
 
    ```sudo npm run build```
+
+## Run the node server
+
+1. Navigate to server folder
+
+   ```cd server_folder_path```
+
+2. Install depencies
+
+   ```sudo npm install```
+
+3. Run the app with pm2
+
+   ```pm2 start app.js```
+
+4. Freeze a process list on reboot
+
+   ```pm2 save```
+
+5. Display all processes logs in streaming
+
+   ```pm2 logs```
