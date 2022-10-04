@@ -246,3 +246,15 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
    
    ```
 
+4. Test configuration
+
+   ```
+    sudo nginx -t
+   ```
+
+5. Reload Nginx
+
+   ```
+   sudo /etc/init.d/nginx reload
+   ```
+
