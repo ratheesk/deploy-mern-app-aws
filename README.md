@@ -76,4 +76,11 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 
    ```q```
 
+## Install nano text editor
 
+1. Run system update
+
+   ```sudo apt-get update```
+2. Install the editor
+
+   ```sudo apt-get install nano```
