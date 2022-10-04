@@ -76,6 +76,10 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 
    ```q```
 
+5. Ensure every time you restart your system Nginx starts up automatically.
+
+   ```sudo systemctl enable nginx```
+
 ## Install nano text editor
 
 1. Run system update
@@ -151,3 +155,35 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 6. Display all processes logs in streaming
 
    ```pm2 logs```
+
+
+## Setting up Nginx as a reverse proxy for Nodejs application
+
+1. Remove default file to sites-available path
+
+   ```
+   sudo rm /etc/nginx/sites-available/default
+   ```
+
+2. Add default file to sites-available path
+
+    ```
+        sudo nano /etc/nginx/sites-available/default
+    ```
+
+3. Add the code for server block
+
+   ``` server {
+   listen 80 default_server;
+   server_name yourdomain.com www.yourdomain.com;
+   location / {
+   proxy_pass http://private_ip_of_server:5000;
+   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection 'upgrade';
+   proxy_set_header Host $host;
+   proxy_cache_bypass $http_upgrade;
+   } 
+   
+   ```
+
