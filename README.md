@@ -27,7 +27,7 @@ how to deploy a MERN environment that is composed of Ubuntu 22.04 servers provid
 2. Replace your Public IPv4 DNS
 
     ```
-    ssh -i visAct.pem ubuntu@Public_IPv4_DNS
+    ssh -i YourFile.pem ubuntu@Public_IPv4_DNS
     ```
 
 ## Install Nodejs
